@@ -78,9 +78,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="GVAnnotations.h" />
+    <ClInclude Include="GVCoord.h" />
+    <ClInclude Include="LineGeometry.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GVAnnotation.cpp" />
+    <ClCompile Include="GVCoord.cpp" />
+    <ClCompile Include="LineGeometry.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

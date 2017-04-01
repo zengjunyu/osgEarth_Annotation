@@ -26,12 +26,19 @@
 #include <osgEarthAnnotation/ScaleDecoration>
 
 #include <osgEarthSymbology/GeometryFactory>
+#include <osgEarthSymbology/Style>
+
+#include <osgEarthFeatures/Feature>
+#include <osgEarthFeatures/TessellateOperator>
 
 #include <osgViewer/Viewer>
 #include <osgViewer/ViewerEventHandlers>
 #include <osgGA/StateSetManipulator>
 #include <osgGA/EventVisitor>
 #include <osgDB/WriteFile>
+
+#include "GVCoord.h"
+#include "LineGeometry.h"
 
 #ifdef GVANNOTATIONS_EXPORTS
 #define GVANNOTATIONS_API __declspec(dllexport)
