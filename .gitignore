@@ -1,0 +1,14 @@
+
+
+## files ##
+*.obj
+*.orig
+*.suo
+*.sdf
+*.opensdf
+
+
+## dir ##
+Release/
+Debug/
+ipch/
