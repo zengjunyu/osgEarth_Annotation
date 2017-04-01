@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFC_OSG_MDI", "MFC_OSG_MDI\MFC_OSG_MDI.vcxproj", "{006CCD1A-EAE9-482F-94C8-C569752730AD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EarthSDK", "EarthSDK\EarthSDK.vcxproj", "{6CB6FC86-2658-4DB7-ACFA-9F5EA74D97E3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GVAnnotations", "GVAnnotations\GVAnnotations.vcxproj", "{1A6373C2-A376-4F35-BC3D-9634A260E5A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{006CCD1A-EAE9-482F-94C8-C569752730AD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{006CCD1A-EAE9-482F-94C8-C569752730AD}.Debug|Win32.Build.0 = Debug|Win32
+		{006CCD1A-EAE9-482F-94C8-C569752730AD}.Release|Win32.ActiveCfg = Release|Win32
+		{006CCD1A-EAE9-482F-94C8-C569752730AD}.Release|Win32.Build.0 = Release|Win32
+		{6CB6FC86-2658-4DB7-ACFA-9F5EA74D97E3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6CB6FC86-2658-4DB7-ACFA-9F5EA74D97E3}.Debug|Win32.Build.0 = Debug|Win32
+		{6CB6FC86-2658-4DB7-ACFA-9F5EA74D97E3}.Release|Win32.ActiveCfg = Release|Win32
+		{6CB6FC86-2658-4DB7-ACFA-9F5EA74D97E3}.Release|Win32.Build.0 = Release|Win32
+		{1A6373C2-A376-4F35-BC3D-9634A260E5A2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A6373C2-A376-4F35-BC3D-9634A260E5A2}.Debug|Win32.Build.0 = Debug|Win32
+		{1A6373C2-A376-4F35-BC3D-9634A260E5A2}.Release|Win32.ActiveCfg = Release|Win32
+		{1A6373C2-A376-4F35-BC3D-9634A260E5A2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
