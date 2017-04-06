@@ -27,12 +27,14 @@ public:
 	~GxWorld();
 
 	void Display();
+	void InitAnno();
+	void DrawAnno();
 
 private:
 	struct Hidden;
 	friend struct Hidden;
 
 	Hidden* h;
-
+	GVAnnotations* anno; 
 };
 #endif //GXWORLD_H

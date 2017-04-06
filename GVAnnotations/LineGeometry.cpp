@@ -1,8 +1,6 @@
 #pragma once
 
 #include "LineGeometry.h"
-#include <cmath>
-#include <iostream>
 
 LineGeometry::LineGeometry()
 {
@@ -51,7 +49,7 @@ void LineGeometry::setControlPoints(std::vector<GVCoord>& vtxBuffer)
 bool LineGeometry::toVertice(std::vector<GVCoord>& vtxBuffer, std::vector<int>* vtxBuffer2 )
 {
 	if(_controlPoints.size() <= 1) return false;
-	double x1 = _controlPoints[0].lon;
+	/*double x1 = _controlPoints[0].lon;
 	double y1 = _controlPoints[0].lat;
 	double x2 = _controlPoints[1].lon;
 	double y2 = _controlPoints[1].lat;
@@ -92,7 +90,7 @@ bool LineGeometry::toVertice(std::vector<GVCoord>& vtxBuffer, std::vector<int>* 
 	vtxBuffer.push_back(_controlPoints[2]);
 	vtxBuffer.push_back(_controlPoints[1]);
 	vtxBuffer.push_back(GVCoord(x5,y5,z5));
-	vtxBuffer2->push_back(3);
+	vtxBuffer2->push_back(3);*/
 
 
 	vtxBuffer = _controlPoints;

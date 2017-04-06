@@ -3,7 +3,10 @@
 
 #include <vector>
 #include "GVCoord.h"
-#include "osg/Vec3d"
+#include <cmath>
+#include <iostream>
+
+#include <osg/Vec3d>
 
 class LineGeometry
 {

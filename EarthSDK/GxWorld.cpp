@@ -33,6 +33,16 @@ public:
 		return mViewer;
 	}
 
+	osg::ref_ptr<osgEarth::MapNode> getMapMode()
+	{
+		return mMapNode;
+	}
+
+	osg::ref_ptr<osg::Group> getRoot()
+	{
+		return mRoot;
+	}
+
 private:
 	void InitOSG(GxWorld* world)
 	{
@@ -49,8 +59,8 @@ private:
 
 		mMapNode = new osgEarth::MapNode(mMap.get());
 
-		anno = new GVAnnotations(mRoot, mMapNode);
-		anno->draw();
+		/*anno = new GVAnnotations(mRoot, mMapNode);
+		anno->draw();*/
 
 		mRoot->addChild(mMapNode.get());
 
@@ -111,6 +121,16 @@ void GxWorld::Display()
 {
 	h->getViewer()->setDone(true);
 	HANDLE mThreadHandle = (HANDLE)_beginthread(&Hidden::Render, 0, h);
+}
+
+void GxWorld::InitAnno()
+{
+	anno = new GVAnnotations(h->getRoot(), h->getMapMode());
+}
+
+void GxWorld::DrawAnno()
+{
+	anno->draw();
 }
 
 I_GxWorld* GxWorld_CreateWorldObject(HWND hwnd)

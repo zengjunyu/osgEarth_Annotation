@@ -12,6 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="res\MFC_OSG_MDI.ico" />
+    <None Include="res\MFC_OSG_MDIDoc.ico" />
+    <None Include="res\Toolbar.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">

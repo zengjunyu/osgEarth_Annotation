@@ -19,6 +19,7 @@
 
 BEGIN_MESSAGE_MAP(CMFC_OSG_MDIApp, CWinApp)
     ON_COMMAND(ID_APP_ABOUT, &CMFC_OSG_MDIApp::OnAppAbout)
+	ON_COMMAND_RANGE(ID_ONE, ID_THREE, &CMFC_OSG_MDIApp::OnDealWithMenus)
     ON_COMMAND(ID_FILE_OPEN, &CWinApp::OnFileOpen)
 END_MESSAGE_MAP()
 
@@ -28,7 +29,6 @@ END_MESSAGE_MAP()
 CMFC_OSG_MDIApp::CMFC_OSG_MDIApp()
 {
 }
-
 
 // The one and only CMFC_OSG_MDIApp object
 
@@ -139,6 +139,24 @@ void CMFC_OSG_MDIApp::OnAppAbout()
 {
     CAboutDlg aboutDlg;
     aboutDlg.DoModal();
+}
+
+void CMFC_OSG_MDIApp::OnDealWithMenus(UINT nID)
+{
+	CAboutDlg aboutDlg;
+	switch(nID)
+	{
+		case ID_ONE:
+			i_GxWorld->InitAnno();
+			i_GxWorld->DrawAnno();
+			break;
+		case ID_TWO:
+			aboutDlg.DoModal();
+			break;
+		case ID_THREE:
+			aboutDlg.DoModal();
+			break;
+	}
 }
 
 I_GxWorld* i_GxWorld;

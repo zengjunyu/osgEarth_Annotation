@@ -8,6 +8,7 @@
 
 #include "resource.h"       // main symbols
 #include "I_GxWorld.h"
+#include "GVAnnotations.h"
 
 
 // CMFC_OSG_MDIApp:
@@ -26,6 +27,7 @@ public:
 
 // Implementation
     afx_msg void OnAppAbout();
+	afx_msg void OnDealWithMenus(UINT nID);
     DECLARE_MESSAGE_MAP()
 };
 
