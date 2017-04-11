@@ -43,6 +43,16 @@ public:
 		return mRoot;
 	}
 
+	osg::ref_ptr<osg::Group> getAnnoGroup()
+	{
+		return mAnnoGroup;
+	}
+
+	osg::ref_ptr<osg::Group> getEditGroup()
+	{
+		return mEditGroup;
+	}
+
 private:
 	void InitOSG(GxWorld* world)
 	{
@@ -58,6 +68,9 @@ private:
 		mMap->addElevationLayer(new osgEarth::ElevationLayer("Elevation", elevation));
 
 		mMapNode = new osgEarth::MapNode(mMap.get());
+		
+		mAnnoGroup = new osg::Group();
+		mEditGroup = new osg::Group();
 
 		/*anno = new GVAnnotations(mRoot, mMapNode);
 		anno->draw();*/
@@ -101,6 +114,8 @@ private:
 
 	osg::ref_ptr<osgViewer::Viewer> mViewer;
 	osg::ref_ptr<osg::Group> mRoot;
+	osg::ref_ptr<osg::Group> mAnnoGroup;
+	osg::ref_ptr<osg::Group> mEditGroup;
 	osg::ref_ptr<osgEarth::Map> mMap;
 	osg::ref_ptr<osgEarth::MapNode> mMapNode;
 
@@ -123,9 +138,10 @@ void GxWorld::Display()
 	HANDLE mThreadHandle = (HANDLE)_beginthread(&Hidden::Render, 0, h);
 }
 
-void GxWorld::InitAnno()
+void GxWorld::InitAnno(int key)
 {
-	anno = new GVAnnotations(h->getRoot(), h->getMapMode());
+	anno = new GVAnnotations(h->getViewer(), h->getRoot(), h->getMapMode(), h->getAnnoGroup(), h->getEditGroup());
+	anno->initGeom(key);
 }
 
 void GxWorld::DrawAnno()

@@ -27,7 +27,7 @@ public:
 	~GxWorld();
 
 	void Display();
-	void InitAnno();
+	void InitAnno(int key);
 	void DrawAnno();
 
 private:

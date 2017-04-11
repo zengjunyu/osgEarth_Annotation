@@ -21,7 +21,16 @@
     <ClInclude Include="GVCoord.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LineGeometry.h">
+    <ClInclude Include="GVGeometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GV00001.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GVLineCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UseEventHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,7 +41,13 @@
     <ClCompile Include="GVCoord.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LineGeometry.cpp">
+    <ClCompile Include="GV00001.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GVLineCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UseEventHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

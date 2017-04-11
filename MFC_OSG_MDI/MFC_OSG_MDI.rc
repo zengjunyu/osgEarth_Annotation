@@ -170,9 +170,9 @@ BEGIN
     END
     POPUP "LineSymbol"
     BEGIN
-        MENUITEM "one",                         ID_ONE
-        MENUITEM "two",                         ID_TWO
-        MENUITEM "three",                       ID_THREE
+        MENUITEM "GV00001",                     ID_ONE
+        MENUITEM "GV00002",                     ID_TWO
+        MENUITEM "GV00003",                     ID_THREE
     END
 END
 

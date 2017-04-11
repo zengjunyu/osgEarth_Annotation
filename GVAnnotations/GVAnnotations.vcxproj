@@ -77,14 +77,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="GV00001.h" />
     <ClInclude Include="GVAnnotations.h" />
     <ClInclude Include="GVCoord.h" />
-    <ClInclude Include="LineGeometry.h" />
+    <ClInclude Include="GVGeometry.h" />
+    <ClInclude Include="GVLineCreator.h" />
+    <ClInclude Include="UseEventHandler.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GV00001.cpp" />
     <ClCompile Include="GVAnnotation.cpp" />
     <ClCompile Include="GVCoord.cpp" />
-    <ClCompile Include="LineGeometry.cpp" />
+    <ClCompile Include="GVLineCreator.cpp" />
+    <ClCompile Include="UseEventHandler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

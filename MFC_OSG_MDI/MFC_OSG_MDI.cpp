@@ -147,7 +147,7 @@ void CMFC_OSG_MDIApp::OnDealWithMenus(UINT nID)
 	switch(nID)
 	{
 		case ID_ONE:
-			i_GxWorld->InitAnno();
+			i_GxWorld->InitAnno(1);
 			i_GxWorld->DrawAnno();
 			break;
 		case ID_TWO:
