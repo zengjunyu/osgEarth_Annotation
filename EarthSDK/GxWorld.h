@@ -27,8 +27,8 @@ public:
 	~GxWorld();
 
 	void Display();
-	void InitAnno(int key);
-	void DrawAnno();
+	void InitAnno();
+	void sendKey(int key);
 
 private:
 	struct Hidden;

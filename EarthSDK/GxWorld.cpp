@@ -76,6 +76,8 @@ private:
 		anno->draw();*/
 
 		mRoot->addChild(mMapNode.get());
+		mRoot->addChild(mAnnoGroup.get());
+		mRoot->addChild(mEditGroup.get());
 
 		RECT rect;
 		mViewer = new osgViewer::Viewer();
@@ -138,15 +140,13 @@ void GxWorld::Display()
 	HANDLE mThreadHandle = (HANDLE)_beginthread(&Hidden::Render, 0, h);
 }
 
-void GxWorld::InitAnno(int key)
+void GxWorld::InitAnno()
 {
 	anno = new GVAnnotations(h->getViewer(), h->getRoot(), h->getMapMode(), h->getAnnoGroup(), h->getEditGroup());
-	anno->initGeom(key);
 }
-
-void GxWorld::DrawAnno()
+void GxWorld::sendKey(int key)
 {
-	anno->draw();
+	anno->initGeom(key);
 }
 
 I_GxWorld* GxWorld_CreateWorldObject(HWND hwnd)

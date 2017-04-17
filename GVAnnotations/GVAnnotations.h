@@ -37,6 +37,7 @@
 #include "GVCoord.h"
 #include "GVGeometry.h"
 #include "GV00001.h"
+#include "GV00002.h"
 #include "UseEventHandler.h"
 
 #ifdef GVANNOTATIONS_EXPORTS
@@ -51,15 +52,15 @@ public:
 	GVAnnotations(osgViewer::Viewer* viewer, osg::Group* root, osgEarth::MapNode* mapNode, osg::Group* annoGroup, osg::Group* editGroup);
 	~GVAnnotations();
 
-	void draw();
 	void initGeom(int key);
 
 private:
 	osg::ref_ptr<osg::Group> mRoot;
 	osg::ref_ptr<osg::Group> mAnnoGroup;
-	osg::ref_ptr<osg::Group> mEitGroup;
+	osg::ref_ptr<osg::Group> mEditGroup;
 	osg::ref_ptr<osgEarth::MapNode> mMapNode;
 	osg::ref_ptr<osgViewer::Viewer> mViewer;
 
-	GVGeometry* geom;
+	GVGeometry* line;
+	UseEventHandler* ush;
 };

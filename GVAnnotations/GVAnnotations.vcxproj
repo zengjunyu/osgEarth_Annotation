@@ -77,18 +77,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bezier.h" />
+    <ClInclude Include="DraggerPositionChanged.h" />
     <ClInclude Include="GV00001.h" />
+    <ClInclude Include="GV00002.h" />
     <ClInclude Include="GVAnnotations.h" />
     <ClInclude Include="GVCoord.h" />
     <ClInclude Include="GVGeometry.h" />
     <ClInclude Include="GVLineCreator.h" />
+    <ClInclude Include="LineStyle.h" />
     <ClInclude Include="UseEventHandler.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bezier.cpp" />
+    <ClCompile Include="DraggerPositionChanged.cpp" />
     <ClCompile Include="GV00001.cpp" />
+    <ClCompile Include="GV00002.cpp" />
     <ClCompile Include="GVAnnotation.cpp" />
     <ClCompile Include="GVCoord.cpp" />
     <ClCompile Include="GVLineCreator.cpp" />
+    <ClCompile Include="LineStyle.cpp" />
     <ClCompile Include="UseEventHandler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -5,9 +5,9 @@
 class I_GxWorld
 {
 public:
-	virtual void Display()=0;
-	virtual void InitAnno(int key)=0;
-	virtual void DrawAnno()=0;
+	virtual void Display() = 0;
+	virtual void InitAnno() = 0;
+	virtual void sendKey(int key) = 0;
 };
 
 #ifdef __cplusplus

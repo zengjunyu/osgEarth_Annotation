@@ -1,14 +1,14 @@
-#ifndef __GV00001_H__
-#define __GV00001_H__
+#ifndef __GV00002_H__
+#define __GV00002_H__
 
 #include "GVGeometry.h"
 #include "Bezier.h"
 
-class GV00001 : public GVGeometry
+class GV00002 : public GVGeometry
 {
 public:
-	GV00001();
-	~GV00001();
+	GV00002();
+	~GV00002();
 
 	int getControlPointCount();
 	void getControlPoints(std::vector<GVCoord>& vtxBuffer);
@@ -22,4 +22,4 @@ private:
 	std::vector<GVCoord> _controlPoints;
 };
 
-#endif //__GV00001_H__
+#endif //__GV00002_H__

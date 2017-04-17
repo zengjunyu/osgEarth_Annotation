@@ -147,11 +147,10 @@ void CMFC_OSG_MDIApp::OnDealWithMenus(UINT nID)
 	switch(nID)
 	{
 		case ID_ONE:
-			i_GxWorld->InitAnno(1);
-			i_GxWorld->DrawAnno();
+			i_GxWorld->sendKey(1);
 			break;
 		case ID_TWO:
-			aboutDlg.DoModal();
+			i_GxWorld->sendKey(2);
 			break;
 		case ID_THREE:
 			aboutDlg.DoModal();

@@ -65,4 +65,5 @@ void CMFC_OSG_MDIView::OnInitialUpdate()
 
 	i_GxWorld = GxWorld_CreateWorldObject(m_hWnd);
 	i_GxWorld->Display();
+	i_GxWorld->InitAnno();
 }
