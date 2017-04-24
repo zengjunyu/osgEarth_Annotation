@@ -39,9 +39,9 @@ bool UseEventHandler::handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionA
 			if(_gvLineCreator->handle(ea, view, myMapNode))
 			{
 				isNew = false;
-				myEditGroup->addChild(_gvLineCreator->_controlPointShow.get());//新图标
 				myLine->setControlPoints(_gvLineCreator->_curCoords);
 				myAnnoGroup->addChild(myLineStyle->drawLine(myMapNode, myLine));
+				myEditGroup->addChild(_gvLineCreator->_controlPointShow.get());//新图标
 
 				GVGeometry* _line = myLine;
 				lineAddress.push_back(_line);
@@ -54,9 +54,9 @@ bool UseEventHandler::handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionA
 		{
 			if(_gvLineCreator->handle(ea, view, myMapNode))
 			{
-				myEditGroup->setChild(0,_gvLineCreator->_controlPointShow.get());
 				myLine->setControlPoints(_gvLineCreator->_curCoords);
 				myAnnoGroup->setChild(myAnnoGroup->getNumChildren()-1,myLineStyle->drawLine(myMapNode, myLine));
+				myEditGroup->setChild(0,_gvLineCreator->_controlPointShow.get());
 			}
 
 		}
@@ -150,7 +150,7 @@ bool UseEventHandler::handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionA
 						//controlPoints[i].alt += (coord.alt - centerCoord.alt);
 					}
 				}
-				line->setControlPoints(controlPoints);
+				line->setControlPointsEx(controlPoints);
 				myEditGroup->removeChild(0,myEditGroup->getNumChildren());
 				myAnnoGroup->setChild(indexOfLine,myLineStyle->drawLine(myMapNode,line));
 				myDraggerPositionChanged->CreatControlPonitsShow(controlPoints,myMapNode,myEditGroup);
@@ -213,7 +213,7 @@ bool UseEventHandler::handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionA
 						//controlPoints[i].alt += (coord.alt - centerCoord.alt);
 					}
 				}
-				line->setControlPoints(controlPoints);
+				line->setControlPointsEx(controlPoints);
 				myEditGroup->removeChild(0,myEditGroup->getNumChildren());
 				myAnnoGroup->setChild(indexOfLine,myLineStyle->drawLine(myMapNode,line));
 				myDraggerPositionChanged->CreatControlPonitsShow(controlPoints,myMapNode,myEditGroup);

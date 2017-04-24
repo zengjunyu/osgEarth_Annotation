@@ -38,6 +38,7 @@
 #include "GVGeometry.h"
 #include "GV00001.h"
 #include "GV00002.h"
+#include "GV00003.h"
 #include "UseEventHandler.h"
 
 #ifdef GVANNOTATIONS_EXPORTS

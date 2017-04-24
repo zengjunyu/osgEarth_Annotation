@@ -19,6 +19,7 @@
 #include <osgEarth/MapNode>
 #include <osgEarthDrivers/tms/TMSOptions>
 #include <osgEarthUtil/EarthManipulator>
+#include <osgEarthUtil/Sky>
 
 class GxWorld : public I_GxWorld
 {

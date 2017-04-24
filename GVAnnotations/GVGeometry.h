@@ -3,6 +3,7 @@
 
 #include "GVCoord.h"
 #include <vector>
+#include <osg/Vec3d>
 
 class GVGeometry
 {

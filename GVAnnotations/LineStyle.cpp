@@ -10,7 +10,10 @@ osg::Group* LineStyle::drawLine(osgEarth::MapNode* mapNode,GVGeometry* line)
 	/*geomStyle.getOrCreate<LineSymbol>()->stroke()->widthUnits() = osgEarth::Symbology::Units::PIXELS;
 	geomStyle.getOrCreate<LineSymbol>()->tessellation() = 200.0f;*/
 	geomStyle.getOrCreate<AltitudeSymbol>()->clamping() = AltitudeSymbol::CLAMP_TO_TERRAIN;
-	geomStyle.getOrCreate<AltitudeSymbol>()->technique() = AltitudeSymbol::TECHNIQUE_GPU;
+	//geomStyle.getOrCreate<AltitudeSymbol>()->technique() = AltitudeSymbol::TECHNIQUE_MAP;
+	geomStyle.getOrCreate<AltitudeSymbol>()->technique() = AltitudeSymbol::TECHNIQUE_DRAPE;
+	//geomStyle.getOrCreate<PolygonSymbol>()->fill()->color() = Color(Color::Red, 1.0);
+	//geomStyle.getOrCreate<ExtrusionSymbol>()->height() = 250.0;
 
 	const SpatialReference* geoSRS = mapNode->getMapSRS()->getGeographicSRS();
 	std::vector<GVCoord> vtxBuffer;

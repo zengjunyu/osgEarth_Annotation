@@ -68,16 +68,22 @@ private:
 		mMap->addElevationLayer(new osgEarth::ElevationLayer("Elevation", elevation));
 
 		mMapNode = new osgEarth::MapNode(mMap.get());
+
+		
 		
 		mAnnoGroup = new osg::Group();
 		mEditGroup = new osg::Group();
 
-		/*anno = new GVAnnotations(mRoot, mMapNode);
-		anno->draw();*/
-
 		mRoot->addChild(mMapNode.get());
 		mRoot->addChild(mAnnoGroup.get());
 		mRoot->addChild(mEditGroup.get());
+
+		osgEarth::Util::SkyNode* sky = osgEarth::Util::SkyNode::create(mMapNode);
+		sky->setMoonVisible(false);
+		sky->setSunVisible(true);
+		sky->setLighting(osg::StateAttribute::OFF);
+		sky->setMinimumAmbient(osg::Vec4d(0.0f, 0.f, 0.f, 0.f));
+		mRoot->addChild(sky);
 
 		RECT rect;
 		mViewer = new osgViewer::Viewer();
@@ -102,12 +108,18 @@ private:
 		camera->setGraphicsContext(gc);
 		camera->setViewport(new osg::Viewport(0, 0, traits->width, traits->height));
 		camera->setClearMask(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
-		camera->setClearColor(osg::Vec4f(0.2f, 0.2f, 0.4f, 1.0f));
+		camera->setClearColor(osg::Vec4f(0.0f, 0.0f, 0.0f, 1.0f));
 		camera->setProjectionMatrixAsPerspective(
 			30.0f, static_cast<double>(traits->width)/static_cast<double>(traits->height), 1.0, 1000.0);
+		
 		mViewer->setCamera(camera.get());
 		mViewer->setCameraManipulator(new osgEarth::Util::EarthManipulator);
 		mViewer->setSceneData(mRoot.get());
+		osgEarth::Viewpoint viewpoint = ((osgEarth::Util::EarthManipulator*)(mViewer->getCameraManipulator()))->getViewpoint();
+		const osgEarth::Viewpoint pos = osgEarth::Viewpoint("MyCenter", 111.625, 22.5833, 0.0, viewpoint.getHeading(), viewpoint.getPitch(), viewpoint.getRange());
+		((osgEarth::Util::EarthManipulator*)(mViewer->getCameraManipulator()))->setViewpoint(pos, 2.0);
+		((osgEarth::Util::EarthManipulator*)(mViewer->getCameraManipulator()))->setHomeViewpoint(pos);
+
 		mViewer->realize();
 	}
 

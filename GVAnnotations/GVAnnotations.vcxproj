@@ -81,6 +81,7 @@
     <ClInclude Include="DraggerPositionChanged.h" />
     <ClInclude Include="GV00001.h" />
     <ClInclude Include="GV00002.h" />
+    <ClInclude Include="GV00003.h" />
     <ClInclude Include="GVAnnotations.h" />
     <ClInclude Include="GVCoord.h" />
     <ClInclude Include="GVGeometry.h" />
@@ -93,6 +94,7 @@
     <ClCompile Include="DraggerPositionChanged.cpp" />
     <ClCompile Include="GV00001.cpp" />
     <ClCompile Include="GV00002.cpp" />
+    <ClCompile Include="GV00003.cpp" />
     <ClCompile Include="GVAnnotation.cpp" />
     <ClCompile Include="GVCoord.cpp" />
     <ClCompile Include="GVLineCreator.cpp" />

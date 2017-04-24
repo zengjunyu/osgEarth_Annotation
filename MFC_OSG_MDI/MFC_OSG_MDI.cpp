@@ -153,7 +153,7 @@ void CMFC_OSG_MDIApp::OnDealWithMenus(UINT nID)
 			i_GxWorld->sendKey(2);
 			break;
 		case ID_THREE:
-			aboutDlg.DoModal();
+			i_GxWorld->sendKey(3);
 			break;
 	}
 }

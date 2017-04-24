@@ -36,7 +36,7 @@ GVCoord GV00002::getControlPoint(int idx)
 
 void GV00002::setControlPointsEx(std::vector<GVCoord> &vtxBuffer)
 {
-	setControlPoints(vtxBuffer);
+	_controlPoints = vtxBuffer;
 }
 
 void GV00002::setControlPoints(std::vector<GVCoord>& vtxBuffer)
