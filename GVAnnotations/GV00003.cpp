@@ -107,8 +107,157 @@ void GV00003::setControlPoint(int idx, const GVCoord& vtx)
 	int cpSize = _controlPoints.size();
 	if(idx < 0 || idx >= cpSize)
 		return ;
-	_controlPoints[idx] = vtx;
 
+	GVCoord arrowHead = _controlPoints[_controlPoints.size()-1];
+	GVCoord arrowTailLeft = _controlPoints[3];
+	GVCoord arrowTailRight = _controlPoints[4];
+
+	double brockenLineLength = Distance_3(GVCoord((arrowTailLeft.lon + arrowTailRight.lon)/2, (arrowTailLeft.lat + arrowTailRight.lat)/2, 0), arrowHead);
+
+	if(_controlPoints.size() > 6)
+	{
+		brockenLineLength = Distance_3(_controlPoints[_controlPoints.size()-2], _controlPoints[_controlPoints.size()-1]);
+	}
+
+	GVCoord penultimatePointOnAxis;
+	penultimatePointOnAxis.lon = (arrowTailLeft.lon + arrowTailRight.lon)/2;
+	penultimatePointOnAxis.lat = (arrowTailLeft.lat + arrowTailRight.lat)/2;
+	if(_controlPoints.size() > 6)
+	{
+		penultimatePointOnAxis = _controlPoints[_controlPoints.size()-2];
+	}
+
+	double arrowTopLength = 2 * brockenLineLength * scale[0];
+	double arrowNeckWidthHalf = arrowTopLength * scale[1];
+	double arrowEarWidthHalf = arrowTopLength * scale[2];
+	double arrowEarthLength = arrowTopLength * scale[3];
+
+	osg::Vec3d vecTop = osg::Vec3d(arrowHead.lon - penultimatePointOnAxis.lon, arrowHead.lat - penultimatePointOnAxis.lat, 0);
+	vecTop.normalize();
+	osg::Vec3d vecTopVertical = osg::Vec3d(-vecTop.y(), vecTop.x(), 0);
+
+	if(idx == 0)
+	{
+		GVCoord arrowNeckMiddle;
+		arrowNeckMiddle.lon = arrowHead.lon - (arrowTopLength - arrowEarthLength) * vecTop.x();
+		arrowNeckMiddle.lat = arrowHead.lat - (arrowTopLength - arrowEarthLength) * vecTop.y();
+
+		osg::Vec3d vec = osg::Vec3d(vtx.lon - arrowNeckMiddle.lon, vtx.lat - arrowNeckMiddle.lat, 0);
+		double projectLength = vec * vecTopVertical;
+		if(projectLength >= 0){
+			projectLength = 0.3 * arrowNeckWidthHalf;
+		}else{
+			if(abs(projectLength) > 0.7 * arrowEarWidthHalf){
+				projectLength = 0.7 * arrowEarWidthHalf;
+			}else{
+				projectLength = abs(projectLength);
+			}
+		}
+
+		_controlPoints[0].lon = arrowNeckMiddle.lon - projectLength * vecTopVertical.x();
+		_controlPoints[0].lat = arrowNeckMiddle.lat - projectLength * vecTopVertical.y();
+
+		scale[1] = projectLength / arrowTopLength;
+	}else if(idx == 1){
+		double distanceTop = Distance_3(_controlPoints[1], arrowHead);
+		osg::Vec3d vec = osg::Vec3d(arrowHead.lon - vtx.lon, arrowHead.lat - vtx.lat, 0);
+		vec.normalize();
+		_controlPoints[1].lon = arrowHead.lon - distanceTop * vec.x();
+		_controlPoints[1].lat = arrowHead.lat - distanceTop * vec.y();
+
+		vec.x() = distanceTop * vec.x();
+		vec.y() = distanceTop * vec.y();
+		arrowEarWidthHalf = abs(vec * vecTopVertical);
+
+		_controlPoints[2].lon = _controlPoints[1].lon - arrowEarWidthHalf * vecTopVertical.x();
+		_controlPoints[2].lat = _controlPoints[1].lat - arrowEarWidthHalf * vecTopVertical.y();
+
+		double arrowTopLengthNew = Distance_3(_controlPoints[2], arrowHead);
+
+		scale[0] = (arrowTopLengthNew / 2.0) / brockenLineLength;
+		scale[1] = arrowNeckWidthHalf / arrowTopLengthNew;
+		scale[2] = arrowEarWidthHalf / arrowTopLengthNew;
+		scale[3] = (arrowEarthLength - (arrowTopLength - arrowTopLengthNew)) / arrowTopLengthNew;
+		arrowTopLength = arrowTopLengthNew;
+	}else if(idx == 2){
+		osg::Vec3d vec = osg::Vec3d(arrowHead.lon - vtx.lon, arrowHead.lat - vtx.lat, 0);
+		double projectLength = vec * vecTop;
+		static double maxLength = arrowTopLength;
+
+		if(projectLength > 0 && projectLength < maxLength)
+		{
+			_controlPoints[2].lon = arrowHead.lon - projectLength * vecTop.x();
+			_controlPoints[2].lat = arrowHead.lat - projectLength * vecTop.y();
+
+			arrowTopLength = projectLength;
+			arrowNeckWidthHalf = arrowTopLength * scale[1];
+			arrowEarWidthHalf = arrowTopLength * scale[2];
+			arrowEarthLength = arrowTopLength * scale[3];
+
+			scale[0] = (arrowTopLength / 2.0) / brockenLineLength;
+
+			_controlPoints[1].lon = _controlPoints[2].lon + arrowEarWidthHalf * vecTopVertical.x();
+			_controlPoints[1].lat = _controlPoints[2].lat + arrowEarWidthHalf * vecTopVertical.y();
+
+			GVCoord arrowNeckMiddle;
+			arrowNeckMiddle.lon = _controlPoints[2].lon + arrowEarthLength * vecTop.x();
+			arrowNeckMiddle.lat = _controlPoints[2].lat + arrowEarthLength * vecTop.y();
+
+			_controlPoints[0].lon = arrowNeckMiddle.lon - arrowNeckWidthHalf * vecTopVertical.x();
+			_controlPoints[0].lat = arrowNeckMiddle.lat - arrowNeckWidthHalf * vecTopVertical.y();
+		}
+	}else{
+		_controlPoints[idx] = vtx;
+
+		GVCoord arrowHead = _controlPoints[_controlPoints.size()-1];
+		GVCoord arrowTailLeft = _controlPoints[3];
+		GVCoord arrowTailRight = _controlPoints[4];
+
+		double brockenLineLength = Distance_3(GVCoord((arrowTailLeft.lon + arrowTailRight.lon)/2, (arrowTailLeft.lat + arrowTailRight.lat)/2, 0), arrowHead);
+
+		if(_controlPoints.size() > 6)
+		{
+			brockenLineLength = Distance_3(_controlPoints[_controlPoints.size()-2], _controlPoints[_controlPoints.size()-1]);
+		}
+
+		GVCoord penultimatePointOnAxis;
+		penultimatePointOnAxis.lon = (arrowTailLeft.lon + arrowTailRight.lon)/2;
+		penultimatePointOnAxis.lat = (arrowTailLeft.lat + arrowTailRight.lat)/2;
+		if(_controlPoints.size() > 6)
+		{
+			penultimatePointOnAxis = _controlPoints[_controlPoints.size()-2];
+		}
+
+		double arrowTopLength = 2 * brockenLineLength * scale[0];
+		double arrowNeckWidthHalf = arrowTopLength * scale[1];
+		double arrowEarWidthHalf = arrowTopLength * scale[2];
+		double arrowEarthLength = arrowTopLength * scale[3];
+
+		GVCoord arrowNeckRight;
+		GVCoord arrowEarLeft;
+		GVCoord arrowEarMiddle;
+
+		osg::Vec3d vecTop = osg::Vec3d(arrowHead.lon - penultimatePointOnAxis.lon, arrowHead.lat - penultimatePointOnAxis.lat, 0);
+		vecTop.normalize();
+
+		arrowEarMiddle.lon = arrowHead.lon - arrowTopLength * vecTop.x();
+		arrowEarMiddle.lat = arrowHead.lat - arrowTopLength * vecTop.y();
+
+		osg::Vec3d vecTopVertical = osg::Vec3d(-vecTop.y(), vecTop.x(), 0);
+		arrowEarLeft.lon = arrowEarMiddle.lon + arrowEarWidthHalf * vecTopVertical.x();
+		arrowEarLeft.lat = arrowEarMiddle.lat + arrowEarWidthHalf * vecTopVertical.y();
+
+		GVCoord arrowNeckMiddle;
+		arrowNeckMiddle.lon = arrowHead.lon - (arrowTopLength - arrowEarthLength) * vecTop.x();
+		arrowNeckMiddle.lat = arrowHead.lat - (arrowTopLength - arrowEarthLength) * vecTop.y();
+
+		arrowNeckRight.lon = arrowNeckMiddle.lon - arrowNeckWidthHalf * vecTopVertical.x();
+		arrowNeckRight.lat = arrowNeckMiddle.lat - arrowNeckWidthHalf * vecTopVertical.y();
+
+		_controlPoints[0] = arrowNeckRight;
+		_controlPoints[1] = arrowEarLeft;
+		_controlPoints[2] = arrowEarMiddle;
+	}
 }
 
 bool GV00003::toVertice(std::vector<GVCoord>& vtxBuffer, std::vector<int>* vtxBuffer2)
