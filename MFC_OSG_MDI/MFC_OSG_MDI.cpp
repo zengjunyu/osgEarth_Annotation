@@ -19,7 +19,7 @@
 
 BEGIN_MESSAGE_MAP(CMFC_OSG_MDIApp, CWinApp)
     ON_COMMAND(ID_APP_ABOUT, &CMFC_OSG_MDIApp::OnAppAbout)
-	ON_COMMAND_RANGE(ID_ONE, ID_THREE, &CMFC_OSG_MDIApp::OnDealWithMenus)
+	ON_COMMAND_RANGE(ID_ONE, ID_SIX, &CMFC_OSG_MDIApp::OnDealWithMenus)
     ON_COMMAND(ID_FILE_OPEN, &CWinApp::OnFileOpen)
 END_MESSAGE_MAP()
 
@@ -154,6 +154,15 @@ void CMFC_OSG_MDIApp::OnDealWithMenus(UINT nID)
 			break;
 		case ID_THREE:
 			i_GxWorld->sendKey(3);
+			break;
+		case ID_FOUR:
+			i_GxWorld->sendKey(4);
+			break;
+		case ID_FIVE:
+			i_GxWorld->sendKey(5);
+			break;
+		case ID_SIX:
+			i_GxWorld->sendKey(6);
 			break;
 	}
 }

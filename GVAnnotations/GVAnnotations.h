@@ -39,6 +39,9 @@
 #include "GV00001.h"
 #include "GV00002.h"
 #include "GV00003.h"
+#include "GV00004.h"
+#include "GV00005.h"
+#include "GV00006.h"
 #include "UseEventHandler.h"
 
 #ifdef GVANNOTATIONS_EXPORTS

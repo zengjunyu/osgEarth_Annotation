@@ -6,7 +6,7 @@ osg::Group* LineStyle::drawLine(osgEarth::MapNode* mapNode,GVGeometry* line)
 
 	Style geomStyle;
 	geomStyle.getOrCreate<LineSymbol>()->stroke()->color() = Color::Red;
-	geomStyle.getOrCreate<LineSymbol>()->stroke()->width() = 3.0f;
+	geomStyle.getOrCreate<LineSymbol>()->stroke()->width() = 4.0f;
 	/*geomStyle.getOrCreate<LineSymbol>()->stroke()->widthUnits() = osgEarth::Symbology::Units::PIXELS;
 	geomStyle.getOrCreate<LineSymbol>()->tessellation() = 200.0f;*/
 	geomStyle.getOrCreate<AltitudeSymbol>()->clamping() = AltitudeSymbol::CLAMP_TO_TERRAIN;

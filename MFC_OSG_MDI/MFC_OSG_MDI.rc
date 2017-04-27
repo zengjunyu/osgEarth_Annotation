@@ -173,6 +173,9 @@ BEGIN
         MENUITEM "GV00001",                     ID_ONE
         MENUITEM "GV00002",                     ID_TWO
         MENUITEM "GV00003",                     ID_THREE
+        MENUITEM "GV00004",                     ID_FOUR
+        MENUITEM "GV00005",                     ID_FIVE
+        MENUITEM "GV00006",                     ID_SIX
     END
 END
 

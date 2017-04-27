@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Geometry">
       <UniqueIdentifier>{70e10b42-2bff-4a0f-8d09-41ff1a5d943b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Config">
+      <UniqueIdentifier>{d71bc794-3b09-4db9-95f3-27520749f335}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Config">
+      <UniqueIdentifier>{4925e1d6-eeb6-4c0d-87a8-9475bc13dd6a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GVAnnotations.h">
@@ -39,9 +45,6 @@
     <ClInclude Include="LineStyle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Bezier.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="DraggerPositionChanged.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -53,6 +56,24 @@
     </ClInclude>
     <ClInclude Include="GV00003.h">
       <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Bezier.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="KidNey.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="GV00004.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="GV00005.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="GV00006.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigControlPoints.h">
+      <Filter>Header Files\Config</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -71,9 +92,6 @@
     <ClCompile Include="LineStyle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Bezier.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="DraggerPositionChanged.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -85,6 +103,24 @@
     </ClCompile>
     <ClCompile Include="GV00003.cpp">
       <Filter>Source Files\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Bezier.cpp">
+      <Filter>Source Files\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="KidNey.cpp">
+      <Filter>Source Files\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="GV00004.cpp">
+      <Filter>Source Files\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="GV00005.cpp">
+      <Filter>Source Files\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="GV00006.cpp">
+      <Filter>Source Files\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigControlPoints.cpp">
+      <Filter>Source Files\Config</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

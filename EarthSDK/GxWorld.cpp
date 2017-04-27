@@ -156,6 +156,7 @@ void GxWorld::InitAnno()
 {
 	anno = new GVAnnotations(h->getViewer(), h->getRoot(), h->getMapMode(), h->getAnnoGroup(), h->getEditGroup());
 }
+
 void GxWorld::sendKey(int key)
 {
 	anno->initGeom(key);

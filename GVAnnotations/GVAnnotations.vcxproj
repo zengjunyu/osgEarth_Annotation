@@ -61,7 +61,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GVANNOTATIONS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -78,26 +78,36 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Bezier.h" />
+    <ClInclude Include="ConfigControlPoints.h" />
     <ClInclude Include="DraggerPositionChanged.h" />
     <ClInclude Include="GV00001.h" />
     <ClInclude Include="GV00002.h" />
     <ClInclude Include="GV00003.h" />
+    <ClInclude Include="GV00004.h" />
+    <ClInclude Include="GV00005.h" />
+    <ClInclude Include="GV00006.h" />
     <ClInclude Include="GVAnnotations.h" />
     <ClInclude Include="GVCoord.h" />
     <ClInclude Include="GVGeometry.h" />
     <ClInclude Include="GVLineCreator.h" />
+    <ClInclude Include="KidNey.h" />
     <ClInclude Include="LineStyle.h" />
     <ClInclude Include="UseEventHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bezier.cpp" />
+    <ClCompile Include="ConfigControlPoints.cpp" />
     <ClCompile Include="DraggerPositionChanged.cpp" />
     <ClCompile Include="GV00001.cpp" />
     <ClCompile Include="GV00002.cpp" />
     <ClCompile Include="GV00003.cpp" />
+    <ClCompile Include="GV00004.cpp" />
+    <ClCompile Include="GV00005.cpp" />
+    <ClCompile Include="GV00006.cpp" />
     <ClCompile Include="GVAnnotation.cpp" />
     <ClCompile Include="GVCoord.cpp" />
     <ClCompile Include="GVLineCreator.cpp" />
+    <ClCompile Include="KidNey.cpp" />
     <ClCompile Include="LineStyle.cpp" />
     <ClCompile Include="UseEventHandler.cpp" />
   </ItemGroup>
