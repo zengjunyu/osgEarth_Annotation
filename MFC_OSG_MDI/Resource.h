@@ -17,13 +17,17 @@
 #define ID_FOUR                         32780
 #define ID_FIVE                         32781
 #define ID_SIX                          32782
+#define ID_LINESYMBOL_GV00007           32783
+#define ID_LINESYMBOL_GV00008KIDNEY     32784
+#define ID_SEVEN                        32785
+#define ID_EIGHT                        32786
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        130
-#define _APS_NEXT_COMMAND_VALUE         32783
+#define _APS_NEXT_COMMAND_VALUE         32787
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           101
 #endif

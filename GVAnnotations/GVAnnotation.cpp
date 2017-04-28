@@ -65,5 +65,11 @@ void GVAnnotations::initGeom(int key)
 		ush->setIsNew(true);
 		ush->setLineGeometry(line);
 		break;
+	case 7:
+		line = new GV00007();
+		ush->setIsStartAnno(true);
+		ush->setIsNew(true);
+		ush->setLineGeometry(line);
+		break;
 	}
 }

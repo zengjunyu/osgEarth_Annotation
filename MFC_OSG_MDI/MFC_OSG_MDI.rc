@@ -170,12 +170,14 @@ BEGIN
     END
     POPUP "LineSymbol"
     BEGIN
-        MENUITEM "GV00001",                     ID_ONE
-        MENUITEM "GV00002",                     ID_TWO
-        MENUITEM "GV00003",                     ID_THREE
-        MENUITEM "GV00004",                     ID_FOUR
-        MENUITEM "GV00005",                     ID_FIVE
-        MENUITEM "GV00006",                     ID_SIX
+        MENUITEM "GV00001 bezier",              ID_ONE
+        MENUITEM "GV00002 broken line",         ID_TWO
+        MENUITEM "GV00003 curved arrow",        ID_THREE
+        MENUITEM "GV00004 kidney",              ID_FOUR
+        MENUITEM "GV00005 bezier+arrow",        ID_FIVE
+        MENUITEM "GV00006 bezier+subsymbol",    ID_SIX
+        MENUITEM "GV00007 regular line",        ID_SEVEN
+        MENUITEM "GV00008 kidney+subsymbol",    ID_EIGHT
     END
 END
 

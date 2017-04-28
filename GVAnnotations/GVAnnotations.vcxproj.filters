@@ -75,6 +75,9 @@
     <ClInclude Include="ConfigControlPoints.h">
       <Filter>Header Files\Config</Filter>
     </ClInclude>
+    <ClInclude Include="GV00007.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GVAnnotation.cpp">
@@ -121,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="ConfigControlPoints.cpp">
       <Filter>Source Files\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="GV00007.cpp">
+      <Filter>Source Files\Geometry</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

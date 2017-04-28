@@ -86,6 +86,7 @@
     <ClInclude Include="GV00004.h" />
     <ClInclude Include="GV00005.h" />
     <ClInclude Include="GV00006.h" />
+    <ClInclude Include="GV00007.h" />
     <ClInclude Include="GVAnnotations.h" />
     <ClInclude Include="GVCoord.h" />
     <ClInclude Include="GVGeometry.h" />
@@ -104,6 +105,7 @@
     <ClCompile Include="GV00004.cpp" />
     <ClCompile Include="GV00005.cpp" />
     <ClCompile Include="GV00006.cpp" />
+    <ClCompile Include="GV00007.cpp" />
     <ClCompile Include="GVAnnotation.cpp" />
     <ClCompile Include="GVCoord.cpp" />
     <ClCompile Include="GVLineCreator.cpp" />
